@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ translates_item.title }}
+{% endblock %}
+
+{% block description %}
+<div class="card mb-3">
+    <div class="card-header">
+        Жанр: <a href="{{ translates_item.category.get_absolute_url }}">{{ translates_item.category }}</a>
+    </div>
+    <div class="card-body">
+        <div class="media">
+            {% if item.photo %}
+            <img src="{{ translates_item.photo.url }}" alt="" width="250" height="350" class="mr-3">
+            {% else %}
+            <img src="https://picsum.photos/id/1060/250/350/?blur=2" alt="" class="mr-3">
+            {% endif %}
+            <div class="media-body">
+                <h5 class="card-title">{{ translates_item.title }}</h5>
+                <p class="card-text">{{ translates_item.description }}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        {{ translates_item.updated_at | timesince }} ago
+    </div>
+</div>
+{% endblock %}
+
