@@ -37,7 +37,7 @@ class Translates(models.Model):
     =created_at                           дата создания
     =updated_at                           дата изменения
         tag                                  теги
-        categories                           категории
+    =categories                           категории
     =is_published                         опубликованно или нет
     
     #Добавить обязательно к главам при выводе в html фильтр |linebreaks

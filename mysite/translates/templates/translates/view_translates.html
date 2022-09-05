@@ -5,27 +5,45 @@
 {% endblock %}
 
 {% block description %}
-<div class="card mb-3">
-    <div class="card-header">
-        Жанр: <a href="{{ translates_item.category.get_absolute_url }}">{{ translates_item.category }}</a>
-    </div>
-    <div class="card-body">
-        <div class="media">
-            {% if item.photo %}
+
+
+<div class="card mb-3" style="max-width: 800px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            {% if translates_item.photo %}
             <img src="{{ translates_item.photo.url }}" alt="" width="250" height="350" class="mr-3">
             {% else %}
             <img src="https://picsum.photos/id/1060/250/350/?blur=2" alt="" class="mr-3">
             {% endif %}
-            <div class="media-body">
-                <h5 class="card-title">{{ translates_item.title }}</h5>
-                <p class="card-text">{{ translates_item.description }}</p>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">{{ translates_item.title_in_the_original_language }}</h3><br>
+                <h4 class="card-title">{{ translates_item.title }}</h4><br>
+                <h6>Рейтинг произведения (в разработке)</h6><br>
+                <h6>качество перевода (в разработке)</h6><br>
+                <h6>Дата релиза: {{ translates_item.year_of_release }}</h6><br>
+                <h6>Страна: (в разработке)</h6><br>
+                <h6>Частота выхода глав: (в разработке)</h6>
             </div>
         </div>
+    </div>
+    <div class="margin-left-1">
+        <div class="card-body">
+                    <h6>Описание</h6><br>
+                <p class="card-text">{{ translates_item.description }}</p><br>
 
-    </div>
-    <div class="card-footer text-muted">
-        {{ translates_item.updated_at | timesince }} ago
-    </div>
+                <h6 class="card-title">Жанр: <a href="#">{{ translates_item.category }}</a> и тд (переход по жанрам надо
+                    править)</h6><br>
+                <h6 class="card-title">Теги: еще не реализовано</h6>
+
+<div class="card-footer text-muted">
+    {{ translates_item.updated_at | timesince }} ago
+</div>
+            </div>
+        </div>
+</div>
+</div>
 </div>
 {% endblock %}
 
