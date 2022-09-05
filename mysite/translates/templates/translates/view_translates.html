@@ -6,7 +6,6 @@
 
 {% block description %}
 
-
 <div class="card mb-3" style="max-width: 800px;">
     <div class="row g-0">
         <div class="col-md-4">
@@ -18,30 +17,28 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h3 class="card-title">{{ translates_item.title_in_the_original_language }}</h3><br>
+                <h3 class="card-title">{{ translates_item.title_in_the_original_language }}</h3>
                 <h4 class="card-title">{{ translates_item.title }}</h4><br>
-                <h6>Рейтинг произведения (в разработке)</h6><br>
-                <h6>качество перевода (в разработке)</h6><br>
-                <h6>Дата релиза: {{ translates_item.year_of_release }}</h6><br>
-                <h6>Страна: (в разработке)</h6><br>
+                <h6>Рейтинг произведения: (в разработке)</h6>
+                <h6>Качество перевода: (в разработке)</h6>
                 <h6>Частота выхода глав: (в разработке)</h6>
+                <h6>Дата релиза: {{ translates_item.year_of_release }}</h6>
+                <h6>Страна: (в разработке)</h6>
+                <h6 class="card-title">Жанр: <a href="{{ item.get_absolute_url }}">{{ translates_item.category }}</a> и тд (переход по жанрам надо
+                    править)</h6>
+                <h6 class="card-title">Теги: еще не реализовано</h6>
             </div>
         </div>
     </div>
     <div class="margin-left-1">
         <div class="card-body">
-                    <h6>Описание</h6><br>
-                <p class="card-text">{{ translates_item.description }}</p><br>
-
-                <h6 class="card-title">Жанр: <a href="#">{{ translates_item.category }}</a> и тд (переход по жанрам надо
-                    править)</h6><br>
-                <h6 class="card-title">Теги: еще не реализовано</h6>
-
-<div class="card-footer text-muted">
-    {{ translates_item.updated_at | timesince }} ago
-</div>
+            <h5>Описание</h5>
+            <p class="card-text">{{ translates_item.description }}</p><br>
+            <div class="card-footer text-muted">
+                {{ translates_item.updated_at | timesince }} ago
             </div>
         </div>
+    </div>
 </div>
 </div>
 </div>
